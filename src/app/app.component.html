@@ -3,6 +3,9 @@
     <img src="../assets/logo.svg" alt="fairhouse"> FairHouse
   </header>
   <section>
-    <app-housing-list></app-housing-list>
+    <!-- this is like saying, the input variable locationList 
+    we set up in housing-list.component.ts is getting our housingLocationList
+    that we set up in app.component.ts-->
+    <app-housing-list [locationList]="housingLocationList"></app-housing-list>
   </section>
 </main>

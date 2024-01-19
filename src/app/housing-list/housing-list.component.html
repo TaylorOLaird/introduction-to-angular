@@ -1,3 +1,12 @@
 <label for="location-search">Search by location</label>
 <input id="location-search" #search placeholder="Ex: chicago">
-<button (click)="seechHousingLocations(search.value)">Search</button>
+<button type="button" (click)="seechHousingLocations(search.value)">Search</button>
+
+<!-- remember, here we're saying essentially for each location in locationLis,
+and that locationList we have access to becuase it was passed in from app.html
+and this component recieved it in the input var thing from this ones .ts and 
+finally location objects are essentially defined in the housing-location.ts
+and instantiated in the app.ts-->
+<article *ngFor="let location of locationList">
+    <p>{{location.name}}</p>
+</article>
