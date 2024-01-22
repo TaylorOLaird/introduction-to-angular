@@ -9,6 +9,10 @@ finally location objects are essentially defined in the housing-location.ts
 and instantiated in the app.ts-->
 <!-- this is also called template syntatx -->
 <article *ngFor="let location of results">
+    <img [src]="location.photo" 
+    [alt]="'An image for the apartment named ' + location?.name + ', in ' + location?.state" 
+    [title]="'An image for the apartment named ' + location?.name + ', in ' + location?.state">
     <p>{{location.name}}</p>
+    <p>{{location.city}}, {{location.state}}</p>
     <button (click)="selectHousingLocation(location)">View</button>
 </article>

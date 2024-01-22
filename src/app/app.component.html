@@ -11,12 +11,14 @@
     <app-housing-list [locationList]="housingLocationList" (selectedLocationEvent)="updateSelectedLocation($event)"></app-housing-list>
   </section>
   <article>
-    <!-- below stuff is angular template syntax for future reference -->
-    <img [src]="selectedLocation?.photo">
-    <p>{{selectedLocation?.name}}</p>
-    <p>{{selectedLocation?.availableUnits}}</p>
-    <p>{{selectedLocation?.city}}, {{selectedLocation?.state}}</p>
-    <p>{{selectedLocation?.laundry ? "has laundry" : "Does Not have laudry"}}</p>
-    <p>{{selectedLocation?.wifi ? "Has wifi" : "Does Not have wifi"}}</p>
+    <ng-container *ngIf="selectedLocation">
+      <!-- below stuff is angular template syntax for future reference -->
+      <img [src]="selectedLocation.photo">
+      <p>{{selectedLocation.name}}</p>
+      <p>{{selectedLocation.availableUnits}}</p>
+      <p>{{selectedLocation.city}}, {{selectedLocation.state}}</p>
+      <p>{{selectedLocation.laundry ? "has laundry" : "Does Not have laundry"}}</p>
+      <p>{{selectedLocation.wifi ? "Has wifi" : "Does Not have wifi"}}</p>
+    </ng-container>
   </article>
 </main>
