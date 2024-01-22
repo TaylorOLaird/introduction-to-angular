@@ -2,11 +2,12 @@
 <input id="location-search" #search placeholder="Ex: chicago">
 <button type="button" (click)="seechHousingLocations(search.value)">Search</button>
 
-<!-- remember, here we're saying essentially for each location in locationLis,
+<!-- remember, here we're saying essentially for each location in locationList,
 and that locationList we have access to becuase it was passed in from app.html
 and this component recieved it in the input var thing from this ones .ts and 
 finally location objects are essentially defined in the housing-location.ts
 and instantiated in the app.ts-->
-<article *ngFor="let location of locationList">
+<!-- this is also called template syntatx -->
+<article *ngFor="let location of results">
     <p>{{location.name}}</p>
 </article>
