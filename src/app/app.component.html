@@ -6,6 +6,17 @@
     <!-- this is like saying, the input variable locationList 
     we set up in housing-list.component.ts is getting our housingLocationList
     that we set up in app.component.ts-->
-    <app-housing-list [locationList]="housingLocationList"></app-housing-list>
+    <!-- selectedLocationEvent is the litteral name of the output var in the housing component -->
+    <!-- $event is of type HousingLocation because of the housing list component -->
+    <app-housing-list [locationList]="housingLocationList" (selectedLocationEvent)="updateSelectedLocation($event)"></app-housing-list>
   </section>
+  <article>
+    <!-- below stuff is angular template syntax for future reference -->
+    <img [src]="selectedLocation?.photo">
+    <p>{{selectedLocation?.name}}</p>
+    <p>{{selectedLocation?.availableUnits}}</p>
+    <p>{{selectedLocation?.city}}, {{selectedLocation?.state}}</p>
+    <p>{{selectedLocation?.laundry ? "has laundry" : "Does Not have laudry"}}</p>
+    <p>{{selectedLocation?.wifi ? "Has wifi" : "Does Not have wifi"}}</p>
+  </article>
 </main>

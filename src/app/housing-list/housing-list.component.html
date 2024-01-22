@@ -10,4 +10,5 @@ and instantiated in the app.ts-->
 <!-- this is also called template syntatx -->
 <article *ngFor="let location of results">
     <p>{{location.name}}</p>
+    <button (click)="selectHousingLocation(location)">View</button>
 </article>

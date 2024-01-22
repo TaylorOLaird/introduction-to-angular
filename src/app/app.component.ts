@@ -39,9 +39,13 @@ export class AppComponent {
     }
   ];
 
-  // selectedLocation: HousingLocation | undefined;// = this.housingLocationList[0];
+  // this will hold currently selected house, note it 
+  // must be able to also be of type undefined since
+  // initially we might not have selected location
+  selectedLocation: HousingLocation | undefined;
 
-  // updateSelectedLocation(location: HousingLocation) {
-  //   this.selectedLocation = location;
-  // }
+  // really this is just like doing setter and getters
+  updateSelectedLocation(location: HousingLocation) {
+    this.selectedLocation = location;
+  }
 }
