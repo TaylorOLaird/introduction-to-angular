@@ -15,9 +15,9 @@
       <!-- below stuff is angular template syntax for future reference -->
       <img [src]="selectedLocation.photo">
       <p>{{selectedLocation.name}}</p>
-      <p>{{selectedLocation.availableUnits}}</p>
+      <p>{{'Units available: ' + selectedLocation.availableUnits}}</p>
       <p>{{selectedLocation.city}}, {{selectedLocation.state}}</p>
-      <p>{{selectedLocation.laundry ? "has laundry" : "Does Not have laundry"}}</p>
+      <p>{{selectedLocation.laundry ? "Has laundry" : "Does Not have laundry"}}</p>
       <p>{{selectedLocation.wifi ? "Has wifi" : "Does Not have wifi"}}</p>
     </ng-container>
   </article>
